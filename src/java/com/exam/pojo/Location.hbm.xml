@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 2, 2016 10:27:01 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.exam.pojo.Location" table="location" catalog="realstatedb" optimistic-lock="version">
+        <id name="locId" type="java.lang.Integer">
+            <column name="loc_id" />
+            <generator class="identity" />
+        </id>
+        <property name="locName" type="string">
+            <column name="loc_name" length="45" />
+        </property>
+        <property name="roadNo" type="string">
+            <column name="road_no" length="45" />
+        </property>
+        <property name="block" type="string">
+            <column name="block" length="45" />
+        </property>
+        <property name="houseNo" type="string">
+            <column name="house_no" length="45" />
+        </property>
+        <property name="plotNo" type="string">
+            <column name="plot_no" length="45" />
+        </property>
+        <property name="flatNo" type="string">
+            <column name="flat_no" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>

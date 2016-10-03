@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 2, 2016 10:27:01 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.exam.pojo.Customer" table="customer" catalog="realstatedb" optimistic-lock="version">
+        <id name="custId" type="java.lang.Integer">
+            <column name="cust_id" />
+            <generator class="identity" />
+        </id>
+        <property name="custName" type="string">
+            <column name="cust_name" length="45" />
+        </property>
+        <property name="fatherName" type="string">
+            <column name="father_name" length="45" />
+        </property>
+        <property name="address" type="string">
+            <column name="address" length="200" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="45" />
+        </property>
+        <property name="nationalId" type="string">
+            <column name="national_id" length="45" />
+        </property>
+        <property name="contact" type="string">
+            <column name="contact" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>

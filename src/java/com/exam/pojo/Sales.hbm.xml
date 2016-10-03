@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 2, 2016 10:27:01 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.exam.pojo.Sales" table="sales" catalog="realstatedb" optimistic-lock="version">
+        <id name="salesId" type="int">
+            <column name="sales_id" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="flat2" class="com.exam.pojo.Flat2" fetch="select">
+            <column name="flat_no" length="45" />
+        </many-to-one>
+        <property name="custName" type="string">
+            <column name="custName" length="45" />
+        </property>
+        <property name="custEmail" type="string">
+            <column name="custEmail" length="45" />
+        </property>
+        <property name="custPassword" type="string">
+            <column name="custPassword" length="45" />
+        </property>
+        <property name="flatPrice" type="java.lang.Double">
+            <column name="flat_price" precision="22" scale="0" />
+        </property>
+        <property name="bankName" type="string">
+            <column name="bank_name" length="45" />
+        </property>
+        <property name="transactionId" type="string">
+            <column name="transaction_id" length="45" />
+        </property>
+        <property name="paidAmount" type="java.lang.Double">
+            <column name="paid_amount" precision="22" scale="0" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,12 @@
+.row {
+  margin-top: 12px;
+}
+
+.btn{
+    box-shadow: none !important;
+    width: 130px;
+}
+.headerflat{
+    background-color: #045491 !important;
+    color: #fff;
+}

@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 2, 2016 10:27:01 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.exam.pojo.Images" table="images" catalog="realstatedb" optimistic-lock="version">
+        <id name="imgId" type="int">
+            <column name="img_id" />
+            <generator class="assigned" />
+        </id>
+        <property name="buildingImage" type="string">
+            <column name="building_image" length="45" />
+        </property>
+        <property name="ploatImage" type="string">
+            <column name="ploat_image" length="45" />
+        </property>
+        <property name="flatImage" type="string">
+            <column name="flat_image" length="45" />
+        </property>
+        <property name="bedRoomImage" type="string">
+            <column name="bed_room_image" length="45" />
+        </property>
+        <property name="kitchenImage" type="string">
+            <column name="kitchen_image" length="45" />
+        </property>
+        <property name="bathRoomImage" type="string">
+            <column name="bath_room_image" length="45" />
+        </property>
+        <property name="drawingRoomImage" type="string">
+            <column name="drawing_room_image" length="45" />
+        </property>
+        <property name="belconyImage" type="string">
+            <column name="belcony_image" length="45" />
+        </property>
+        <property name="parkingImage" type="string">
+            <column name="parking_image" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 2, 2016 10:27:01 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.exam.pojo.Flat" table="flat" catalog="realstatedb" optimistic-lock="version">
+        <id name="flatNo" type="string">
+            <column name="flat_no" length="45" />
+            <generator class="assigned" />
+        </id>
+        <property name="flatName" type="string">
+            <column name="flat_name" length="45" />
+        </property>
+        <property name="bedRoom" type="string">
+            <column name="bed_room" length="45" />
+        </property>
+        <property name="drawingRoom" type="string">
+            <column name="drawing_room" length="45" />
+        </property>
+        <property name="kitchenRoom" type="string">
+            <column name="kitchen_room" length="45" />
+        </property>
+        <property name="washRoom" type="string">
+            <column name="wash_room" length="45" />
+        </property>
+        <property name="atachBathRoom" type="string">
+            <column name="atach_bath_room" length="45" />
+        </property>
+        <property name="belcony" type="string">
+            <column name="belcony" length="45" />
+        </property>
+        <property name="flatSize" type="string">
+            <column name="flat_size" length="45" />
+        </property>
+        <property name="parking" type="string">
+            <column name="parking" length="45" />
+        </property>
+        <property name="flatImage" type="string">
+            <column name="flat_image" length="45" />
+        </property>
+        <property name="roomImage" type="string">
+            <column name="room_image" length="45" />
+        </property>
+        <property name="othersImage" type="string">
+            <column name="others_image" length="45" />
+        </property>
+        <set name="saleses" table="sales" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="flat_no" length="45" />
+            </key>
+            <one-to-many class="com.exam.pojo.Sales" />
+        </set>
+    </class>
+</hibernate-mapping>

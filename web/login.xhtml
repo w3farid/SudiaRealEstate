@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+        <link href="resources/css/login/form.css" rel="stylesheet"></link>
+        <link href="resources/css/login/one-page-wonder.css" rel="stylesheet"></link>
+        <link href="resources//css/bootstrap.min.css" rel="stylesheet"></link>
+        <script src="resources/js/jquery-3.1.1.min.js">
+        </script>
+    </h:head>
+    <h:body>
+        <div class="container">
+            <div class="featurette" id="about">
+                <div class="container">
+                    <div class="card card-container">
+                        <h:form class="form-signin">
+                            <p:graphicImage id="avaterimg1" value="/resources/images/${loginBean.avaterimag}" class="profile-img-card"/>                            
+                            <p id="profile-name" class="profile-name-card"></p>
+
+                            <span id="reauth-email" class="reauth-email"></span>
+                            <p:inputText id="inputEmail" value="#{loginBean.email}" class="form-control" placeholder="Email address" required="true">
+                                <p:ajax event="change" update="avaterimg1"  listener="#{loginBean.imageCheck()}" />
+                            </p:inputText>
+                            <p:password id="inputPassword" value="#{loginBean.pass}" class="form-control" placeholder="Password" required="true"/>
+
+                            <p:commandButton action="#{loginBean.checkLogin()}" class="btn btn-lg btn-primary btn-block btn-signin" value="LogIn" ajax="false"/>
+                        </h:form>
+                        <a href="#" class="forgot-password">
+                            Forgot the password?
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </h:body>
+</html>
+

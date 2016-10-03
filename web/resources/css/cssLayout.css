@@ -1,0 +1,245 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+#top {
+    background: rgba(0, 0, 0, 0) url("../images/headbg.JPG") repeat scroll 0 0;
+    color: white;
+    height: 450px;
+    margin: 0;
+    padding: 5px;
+    position: relative;
+}
+.logo{
+    float: left;
+}
+.ui-menubar {
+    width: auto;
+    background: transparent;
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+}
+.ui-menu.ui-megamenu .ui-menu-parent .ui-menu-child {
+    background: transparent none repeat scroll 0 0;
+    width: auto;
+}
+.menu {
+    background-attachment: scroll !important;
+    background-clip: border-box !important;
+    background-color: transparent;
+    background-image: none !important;
+    background-origin: padding-box !important;
+    background-position: 0 0 !important;
+    background-repeat: repeat !important;
+    background-size: auto auto !important;
+    border: medium none !important;
+    box-shadow: none !important;
+    float: left;
+    margin-left: 40px;
+    margin-top: 23px;
+    width: 71%;
+}
+.companyname{
+    clear: both;
+    float: left;
+    margin-top: 100px;
+    width: 100%; 
+
+}
+.btnSearch {
+    /*background: #ece3a5 none repeat scroll 0 0;*/
+    height: 41px !important;
+    margin-left: 20px;
+    width: 110px;
+}
+.companyname h1 {
+    border-bottom: medium none;
+    color: #fff;
+    font-size: 40px;
+    font-weight: normal;
+}
+.searchLocation {
+    background: transparent none repeat scroll 0 0;
+    float: left;
+    height: 55px;
+    margin-top: 120px;
+    width: 100%;
+}
+.ui-inputfield, .ui-widget-content .ui-inputfield, .ui-widget-header .ui-inputfield {
+    background: #ffffff none repeat scroll 0 0;
+    color: #313131;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.searchItem {
+    background: white none repeat scroll 0 0;
+    width: 260px !important;
+    height: 38px;
+}
+.searchItem .ui-inputfield, .ui-widget-content .ui-inputfield, .ui-widget-header .ui-inputfield {
+    background: #ffffff none repeat scroll 0 0;
+    box-shadow: 0 2px 2px #8f8f8f inset;
+    color: #313131;
+    padding-top: 10px;
+    width: 250px !important;
+}
+.ui-selectonemenu .ui-selectonemenu-trigger {
+    background: transparent none repeat scroll 0 0;
+    border-bottom: medium none;
+    border-right: medium none;
+    border-top: medium none;
+    cursor: pointer;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 16px;
+}
+.searchLocation .ui-button {
+    background: white none repeat scroll 0 0;
+    cursor: pointer;
+    height: 43px;
+}
+.ui-button {
+    cursor: pointer !important;
+    display: inline-block;
+    margin-right: 0.1em;
+    overflow: visible;
+    position: absolute !important;
+    text-align: center;
+    text-decoration: none !important;
+}
+
+.touchandclick{
+    background: #efefef url(../images/click.png) no-repeat;
+    float: left;
+    width: 100%;
+    height: 140px;
+    padding: 0px;
+    margin: 0px;
+}
+.touchandclick .clickf1 {
+    float: left;
+    margin-left: 28%;
+    margin-top: 32px;
+}
+.touchandclick .clickf2 {
+    background-color: #ef8122;
+    float: left;
+    margin-left: 20px;
+    margin-top: 31px;
+    padding: 14px;
+}
+.touchandclick .clickf2:hover {
+    background-color: #ffa748;
+    float: left;
+    margin-left: 20px;
+    margin-top: 31px;
+    padding: 14px;
+}
+.touchandclick .clickf2 a {
+    text-decoration: none;
+    color: black;
+}
+.featured-menu-panel {
+    background: #fff;
+    clear: both;
+    float: left;
+    height: auto;
+    padding-top: 39px;
+    width: 100%;
+}
+hr{
+    background-color: black;
+    border: 1px solid #dbdbdb    !important;
+}
+.t1 {
+    font-family: sans-serif;
+    font-size: 31px;
+    color: #c3c3c3;
+}
+.t2 {
+    font-family: sans-serif;
+    font-size: 21px;
+    color: #c3c3c3;
+}
+.image1 {
+    background: rgba(0, 0, 0, 0) url("../images/menu-black-tiles.jpg") repeat scroll 0 0;
+    border: 1px solid;
+    float: left;
+    height: 160px;
+    margin-left: 4px;
+    width: 160px;
+}
+
+.image1 p {
+    color: #fff;
+    padding-left: 0;
+    padding-top: 60px;
+}
+/*.imagehover:hover {
+    width: 80%;
+    height:80%;
+    margin: auto;
+    margin-top: 14px;
+    bottom: 0;
+    border: 1px solid #fff;
+}*/
+
+#bottom {
+    position: relative;
+    background-color: #c2dfef;
+    padding: 5px;
+    margin-top: 200px;
+}
+
+#left {
+    float: left;
+    background-color: #ece3a5;
+    padding: 5px;
+    width: 150px;
+}
+
+#right {
+    float: right;
+    background-color: #ece3a5;
+    padding: 5px;
+    width: 150px;
+}
+
+.center_content {
+    position: relative;
+    background-color: #dddddd;
+    padding: 0px;
+    margin: 0px;
+}
+
+.left_content {
+    background-color: #dddddd;
+    padding: 5px;
+    margin-left: 170px;
+}
+
+.right_content {
+    background-color: #dddddd;
+    padding: 5px;
+    margin: 0px 170px 0px 170px;
+}
+
+#top a:link, #top a:visited {
+    color: white;
+    font-weight : bold;
+    text-decoration: none;
+}
+
+#top a:link:hover, #top a:visited:hover  {
+    color: black;
+    font-weight : bold;
+    text-decoration : underline;
+}
+
+

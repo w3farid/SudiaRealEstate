@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 2, 2016 10:27:01 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.exam.pojo.Flat2" table="flat2" catalog="realstatedb" optimistic-lock="version">
+        <id name="flatId" type="java.lang.Integer">
+            <column name="flat_id" />
+            <generator class="identity" />
+        </id>
+        <property name="title" type="string">
+            <column name="Title" length="45" />
+        </property>
+        <property name="location" type="string">
+            <column name="location" length="100" />
+        </property>
+        <property name="details" type="string">
+            <column name="details" length="200" />
+        </property>
+        <property name="city" type="string">
+            <column name="city" length="45" />
+        </property>
+        <property name="collection" type="string">
+            <column name="collection" length="45" />
+        </property>
+        <property name="size" type="string">
+            <column name="size" length="45" />
+        </property>
+        <property name="bedrooms" type="java.lang.Integer">
+            <column name="bedrooms" />
+        </property>
+        <property name="bathrooms" type="java.lang.Integer">
+            <column name="bathrooms" />
+        </property>
+        <property name="image" type="string">
+            <column name="image" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>

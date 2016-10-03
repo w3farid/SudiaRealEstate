@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <h:outputStylesheet name="./css/default.css"/>
+        <h:outputStylesheet name="./css/cssLayout.css"/>
+        <title>Facelets Template</title>
+    </h:head>
+
+    <h:body>
+
+
+        <div id="top" class="top">
+            <ui:insert name="top">Top</ui:insert>
+        </div>
+        <div>
+            <div id="left">
+                <ui:insert name="left">
+                    <ul>
+                        <li class="active"><a href="add_flat.xhtml">Sell Flat<span style="font-size:16px;"> </span></a></li>                                       
+                        <li><a href="updateSales.xhtml">Update Flat<span style="font-size:16px;"></span></a></li>
+                        <li><a href="deleteSales.xhtml">Delete Flat<span style="font-size:16px;"> </span></a></li>
+                        <li><a href="addSales.xhtml">Report<span style="font-size:16px;"> </span></a></li>
+                    </ul>
+                </ui:insert>
+            </div>
+            <div id="content" class="left_content">
+                <ui:insert name="content">
+                    <center>
+                        <h:form>
+                            <p:growl id="growl" life="20000"/>
+                            <p:panelGrid columns="2">
+                                <p:outputLabel for="csti" value="Sales Id"/>
+                                <p:selectOneMenu id="csti" value="#{s.sales.salesId}"  style="width: 185px">
+                                    <f:selectItem itemLabel="Select Sales Id" itemValue="" noSelectionOption="true"/>
+                                    <f:selectItems value="#{s.salesLi}" var="ss" itemValue="#{ss.salesId}" itemLabel="#{ss.salesId}"/>
+                                    <p:ajax event="change" listener="#{s.allSalesById()}" update="cstN cstE cstP fltno fltprc bnkName transId padAmnt"/>
+                                </p:selectOneMenu>
+                                <p:outputLabel for="cstN" value="Customer Name"/>
+                                <p:inputText id="cstN" value="#{s.sales.custName}" placeholder="Customer Name" immediate="false" rendered="true"/>
+                                <p:outputLabel for="cstE" value="Customer Email"/>
+                                <p:inputText id="cstE" value="#{s.sales.custEmail}" placeholder="Customer Email" immediate="false" rendered="true"/>
+                                <p:outputLabel for="cstP" value="Customer Password"/>
+                                <p:password id="cstP" value="#{s.sales.custPassword}" placeholder="Customer Password" immediate="false" rendered="true"/>
+                                <p:outputLabel for="fltno" value="Flat No"/>
+                                <p:inputText id="fltno" value="#{s.flat.flatId}" placeholder="Flat No" immediate="false" rendered="true"/>
+                                <p:outputLabel for="fltprc" value="Flat Price"/>
+                                <p:inputText id="fltprc" value="#{s.sales.flatPrice}" placeholder="Flat Price" immediate="false" rendered="true"/>
+                                <p:outputLabel for="bnkName" value="Bank Name"/>
+                                <p:inputText id="bnkName" value="#{s.sales.bankName}" placeholder="Bank Name" immediate="false" rendered="true"/>
+                                <p:outputLabel for="transId" value="Transaction Id"/>
+                                <p:inputText id="transId" value="#{s.sales.transactionId}" placeholder="Transaction Id" immediate="false" rendered="true"/>
+                                <p:outputLabel for="padAmnt" value="Paid Amount"/>
+                                <p:inputText id="padAmnt" value="#{s.sales.paidAmount}" placeholder="Paid Amount" immediate="false" rendered="true"/>
+                                <p:outputLabel for="insert1" />
+                                <p:commandButton id="insert1" value="Delete" action="#{s.deleteSales()}" ajax="false" styleClass="btn btn-primary" update="growl"/>
+                            </p:panelGrid>
+                        </h:form>
+                    </center>
+                </ui:insert>
+            </div>
+        </div>
+    </h:body>
+
+</html>

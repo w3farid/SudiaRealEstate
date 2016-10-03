@@ -1,0 +1,184 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+     <h:head>
+        <title>Facelet Title</title>
+        <h:outputStylesheet name="./css/bootstrap.min.css"/>
+        <h:outputStylesheet name="./css/formStyle.css"/>
+        <h:outputStylesheet name="./css/addFlatStyle.css"/>
+        <h:outputStylesheet name="./css/addFlatStyle2.css"/>
+    </h:head>
+    <h:body>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-6 col-md-3">
+                    <div class="featurette" id="about">
+                        <nav class="navbar navbar-default sidebar" role="navigation">
+                            <div class="container-fluid">
+                                <div class="navbar-header">
+                                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-sidebar-navbar-collapse-1">
+                                        <span class="sr-only">Toggle navigation</span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                    </button>
+                                </div>
+                                <div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
+                                    <ul class="nav navbar-nav">
+                                        <li class="active"><a href="add_flat.xhtml">Add New Flat<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-th-list"></span></a></li>                                       
+                                        <li><a href="update_flat.xhtml">Update Flat<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-th-list"></span></a></li>
+                                        <li><a href="delete_flat.xhtml">Delete Flat<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-th-list"></span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+
+<!--                    <script src="http://www.tutorialspoint.com/bootstrap/scripts/jquery.min.js">
+                    </script>
+
+                     Bootstrap Core JavaScript 
+                    <script src="http://www.tutorialspoint.com/bootstrap/js/bootstrap.min.js">
+                    </script>-->
+                </div>
+                <div class="col-xs-6 col-md-6">
+                    <div class="row">
+                        <div class="headerflat col-xs-12"><h1>Delete Flat.<br/><hr/></h1></div>
+                    </div>
+                    <h:form enctype="multipart/form-data">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <p:messages id="msgs" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <p:outputLabel for="flat_id" value="Flat Id" />
+                            </div>
+                            <div class="col-xs-9">
+                                <p:selectOneMenu id="flat_id" value="#{flat.flat.flatId}" class="form-control" style="width: 100%">
+                                    <f:selectItem itemValue="" itemLabel="Select Id" noSelectionOption="true"/>
+                                    <f:selectItems value="#{flat.showFlatList}" var="fid" itemValue="#{fid.flatId}" itemLabel="#{fid.flatId}"/>
+                                    <p:ajax listener="#{flat.changeFlatById}" event="change" update="flat_title location details city collection size bedrooms bathrooms "/>
+                                </p:selectOneMenu>
+                                
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <p:outputLabel for="flat_title" value="Flat Title" />
+                            </div>
+                            <div class="col-xs-9">
+                                <p:inputText id="flat_title" value="#{flat.flat.title}" class="form-control" required="true" label="Firstname" requiredMessage="Must be Flate Title.">
+                                    
+                                </p:inputText>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <p:outputLabel for="location" value="Loacation" />
+                            </div>
+                            <div class="col-xs-9">
+                                <p:inputText id="location" value="#{flat.flat.location}" class="form-control" required="true" label="Firstname" requiredMessage="Must be location.">
+                                   
+                                </p:inputText>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <p:outputLabel for="details" value="Details" />
+                            </div>
+                            <div class="col-xs-9">
+                                <p:inputTextarea id="details" rows="5" cols="30" value="#{flat.flat.details}" class="form-control"  counter="display"  maxlength="200" counterTemplate="{0} characters remaining." autoResize="false"  />
+                                <h:outputText id="display" />
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <p:outputLabel for="city" value="City" />
+                            </div>
+                            <div class="col-xs-9">
+                                <p:inputText id="city" value="#{flat.flat.city}" class="form-control" required="true" label="Firstname" requiredMessage="Must be requred.">
+                                    
+                                </p:inputText>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <p:outputLabel for="collection" value="Collection" />
+                            </div>
+                            <div class="col-xs-9">
+                                <p:inputText id="collection" value="#{flat.flat.collection}" class="form-control" required="true" label="Firstname" requiredMessage="Must be requred.">
+                                  
+                                </p:inputText>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <p:outputLabel for="size" value="Size" />
+                            </div>
+                            <div class="col-xs-9">
+                                <p:inputText id="size" value="#{flat.flat.size}" class="form-control" required="true" label="Firstname" requiredMessage="Must be requred.">
+                                   
+                                </p:inputText>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <p:outputLabel for="bedrooms" value="Bedrooms" />
+                            </div>
+                            <div class="col-xs-9">
+                                <p:inputText id="bedrooms" value="#{flat.flat.bedrooms}" class="form-control" required="true" label="Firstname" requiredMessage="Must be requred.">
+                                   
+                                </p:inputText>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <p:outputLabel for="bathrooms" value="Bathrooms" />
+                            </div>
+                            <div class="col-xs-9">
+                                <p:inputText id="bathrooms" value="#{flat.flat.bathrooms}" class="form-control" required="true" label="Firstname" requiredMessage="Must be requred.">
+                                   
+                                </p:inputText>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <p:outputLabel for="imag" value="Choose Image" />
+                            </div>
+                            <div class="col-xs-9">
+                                <p:fileUpload id="imag" value="#{flat.file}" mode="simple" skinSimple="true" rendered="true" requiredMessage="Must be requred."/>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-8">
+
+                            </div>
+                            <div class="col-xs-4">
+                                <p>
+                                    <p:commandButton value="Save" id="nonAjax" actionListener="#{flat.doDelete}" ajax="false" class="btn btn-primary btn-lg" />                                    
+                                </p>
+                            </div>
+                        </div>
+
+                    </h:form>
+                </div>
+                <div class="col-xs-6 col-md-3"></div>
+            </div>
+        </div>
+    </h:body>
+</html>
+
