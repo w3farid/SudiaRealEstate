@@ -4,72 +4,61 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui">
     <h:head>
-        <title>Facelet Title</title>
-         <h:outputStylesheet name="./css/default.css"/>
-<!--        <h:outputStylesheet name="./css/cssLayout.css"/>-->
-        <h:outputStylesheet name="./css/about.css"/>
+        <title>Facelet Title</title>         
         <h:outputStylesheet name="./css/bootstrap.min.css"/>
     </h:head>
     <h:body>
         <div class="body">
-        <div >
-            <div>
-                <p:graphicImage  library="images" name="about.jpg" height="300" width="1200"/>
+            <div class="container">
+                <div>
+                    <p:graphicImage  library="images" name="about.jpg" height="300" width="1200"/>
+                </div>
+                <h:form>
+                <p:commandButton action="main.xhtml" value="Home"  ajax="false" class="btn btn-default" style="box-shadow: none; margin: 5px; color: #000"/>
+            </h:form>
             </div>
-            <div>
-                <h:form>  
-    <p:growl id="messages"/>
- 
-    <p:menubar>
-        <p:menuitem value="Home" url="main.xhtml" icon="ui-icon-document" />
-        
-    </p:menubar>
-</h:form>
-            </div>
-        </div>
-             <div class="h_l">
-                 <p class="breadcrumb carousel ">  SUDIA REAL ESTATE</p>
-            </div>
-        <div id="body1">
-           
-        
-        <div>
-               <div >
+            <div class="container">
+                <h1> SUDIA REAL ESTATE</h1>
+
+                <div id="body1">
+
+
                     <div>
-                        <div id="aout_head">
-                            ABOUT US
+                        <div >
+                            <div>
+                                <div id="aout_head">
+                                    <h2>ABOUT US</h2>
+                                </div>
+                                <hr/>
+                               
+                            </div>
+                            <div id="abot">
+                                <p id="p1"> 
+                                    About Souidia Housing Estate Limited..............................................................................
+                                </p>
+
+                                <p>Building Technology and Ideas Ltd. (bti) is a pioneer real estate company in Bangladesh established in 1984. It has been in the real estate business for over 3 decades and all these years of experience have established bti as a brand name in this sector. bti is one of the founder members of REHAB and the first real estate company in Bangladesh to be awarded with the internationally recognized ISO 9001-2008 certification for quality in Service, Design and Construction of Buildings. Over the years, we have expanded our operations from Dhaka to Chittagong to Comilla and our vision is To build a world class organization.</p>
+
+                                <p>At bti, we take tremendous pride in our professionalism and ensure that we remain the best real esatate company in Bangladesh, with a common underlying emphasis on functional layouts and at the same time following all standard operating procedures to ensure construction of the highest quality. Our well-planned projects constitute some of the most attractive buildings in Dhaka and Chittagong. Located in different areas of Dhaka, Chittagong and Comilla, our wide range of projects enable you to choose a property that suits your taste and lifestyle.</p>
+
+                                <p>Apart from our strength in construction and design, bti also understands the importance of customer care and implements it at an unparalleled level in the real estate sector. bti has a fully committed and well trained customer service team that provides you with service long after the handover of your property. We also maintain a great relationship with our landowners by following a win-win approach for our joint venture projects. We consider our honorable landowners to be our most respected customers as well as our business partners. This is what ensures our position as the best real estate developer in Bangladesh.
+                                    - See more at: http://www.btibd.com/#sthash.2Hb08xrL.dpuf</p>
+                            </div>
+
                         </div>
-                        <div id="aout_head1">
-                            ...........................................................................................................................................................................................................................................................................
-                            ...........................................................................................................................................................................................................................................................................
+                        <div id="aout_head3" >
+                            <p>
+                                ABOUT US
+                            </p>
+                            <p>
+                                CONTACT US............................
+                            </p>
                         </div>
                     </div>
-                    <div id="abot">
-                        <p id="p1"> 
-                            About Souidia Housing Estate Limited..............................................................................
-                        </p>
-
-                        <p>Building Technology and Ideas Ltd. (bti) is a pioneer real estate company in Bangladesh established in 1984. It has been in the real estate business for over 3 decades and all these years of experience have established bti as a brand name in this sector. bti is one of the founder members of REHAB and the first real estate company in Bangladesh to be awarded with the internationally recognized ISO 9001-2008 certification for quality in Service, Design and Construction of Buildings. Over the years, we have expanded our operations from Dhaka to Chittagong to Comilla and our vision is To build a world class organization.</p>
-
-                        <p>At bti, we take tremendous pride in our professionalism and ensure that we remain the best real esatate company in Bangladesh, with a common underlying emphasis on functional layouts and at the same time following all standard operating procedures to ensure construction of the highest quality. Our well-planned projects constitute some of the most attractive buildings in Dhaka and Chittagong. Located in different areas of Dhaka, Chittagong and Comilla, our wide range of projects enable you to choose a property that suits your taste and lifestyle.</p>
-
-                        <p>Apart from our strength in construction and design, bti also understands the importance of customer care and implements it at an unparalleled level in the real estate sector. bti has a fully committed and well trained customer service team that provides you with service long after the handover of your property. We also maintain a great relationship with our landowners by following a win-win approach for our joint venture projects. We consider our honorable landowners to be our most respected customers as well as our business partners. This is what ensures our position as the best real estate developer in Bangladesh.
-                            - See more at: http://www.btibd.com/#sthash.2Hb08xrL.dpuf</p>
-                    </div>
-
                 </div>
-                <div id="aout_head3" >
-                    <p>
-                        ABOUT US
-                    </p>
-                    <p>
-                        CONTACT US............................
-                    </p>
-                </div>
+            </div>
         </div>
-    </div>
-        </div>
-         <br/>
+        <br/>
         <br/>
         <br/>
         <br/>

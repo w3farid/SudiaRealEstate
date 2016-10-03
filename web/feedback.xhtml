@@ -11,11 +11,16 @@
         <script src="/resources/js/jquery-3.1.1.min.js"></script>
         <script src="/resources/js/bootstrap.min.js"></script>
     </h:head>
-    <h:body>
+    <h:body style="padding: 0; margin: 0;">
         <div class="container">
             <div class = "page-header">
-                <img src="resources/images/headerBottomBuildingCode.jpg" style="width: 100%;"/>
+                <h:graphicImage name="/images/headerBottomBuildingCode.jpg" style="width: 100%;"/>
             </div>
+            <h:form>
+                <p:commandButton action="main.xhtml" value="Home"  ajax="false" class="btn btn-warning" style="box-shadow: none; margin: 5px; color: #000"/>
+                <p:commandButton action="add_flat.xhtml" value="back"  ajax="false" class="btn btn-warning" style="box-shadow: none; margin: 5px; color: #000"/>
+            </h:form>
+            <br/>
             <h:form>
                 <p:growl id="grwl"/>
                 <table class="table-bordered" style="width: 100%; text-align: center;">
@@ -34,7 +39,7 @@
                         <td>${v.email}</td>
                         <td>${v.mobile}</td>
                         <td>${v.message}</td>
-                        <td><p:commandButton action="#{feedback.review(v.id)}" value="Recieved" update="grwl" ajax="false"/></td>
+                        <td><p:commandButton action="#{feedback.review(v.id)}" value="Recieved" update="grwl" ajax="false" class="btn btn-success" style="box-shadow: none; margin: 5px; color: #000"/></td>
                     </tr>
                     <f:event listener="#{feedback.feedbackshow()}" type="preRenderView"/>
                 </c:forEach>

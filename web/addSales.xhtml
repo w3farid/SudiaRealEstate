@@ -7,73 +7,63 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 
     <h:head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <h:outputStylesheet name="./css/default.css"/>
-        <h:outputStylesheet name="./css/cssLayout.css"/>
-        <h:outputStylesheet name="./css/bootstrap.min.css"/>
         <title>Facelets Template</title>
+        <h:outputStylesheet name="./css/bootstrap.min.css"/>
     </h:head>
 
     <h:body>
-
-
-        <div id="top" class="top">
-            <ui:insert name="top">Top</ui:insert>
-        </div>
-        <div>
-            <div id="left">
-                <ui:insert name="left">
+        <div class="container">
+            <div id="head" class="header">
+                <img src="resources/images/headbg.JPG" style="width: 100%; height: 250px;"/>
+            </div>
+            <div id="nav" class="row">
+                <div class="col-lg-12">
+                    <br/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3">
                     
-                        <ul>
-                            <li class="active"><a href="add_flat.xhtml">Sell Flat<span style="font-size:16px;"> </span></a></li>                                       
-                            <li><a href="updateSales.xhtml">Update Flat<span style="font-size:16px;"></span></a></li>
-                            <li><a href="deleteSales.xhtml">Delete Flat<span style="font-size:16px;"> </span></a></li>
-                            <li><a href="salesReportAll.jsp">Report<span style="font-size:16px;"> </span></a></li>
-                        </ul>
-                   
-                </ui:insert>
-            </div>
-            <div id="content" class="left_content">
-                <ui:insert name="content">
-                    <br/>
-                    <br/>
-                    <hr/>
-                    <center>
-                        <h:form>
-                            <p:growl id="growl" life="20000"/>
-                            <p:panelGrid columns="2">
-                                <p:outputLabel for="csti" value="Sales Id"/>
-                                <p:inputText id="csti" value="#{s.sales.salesId}" placeholder="Customer Name" immediate="false" rendered="true" class="form-control"/>
-                                <p:outputLabel for="cstN" value="Customer Name"/>
-                                <p:inputText id="cstN" value="#{s.sales.custName}" placeholder="Customer Name" immediate="false" rendered="true" class="form-control"/>
-                                <p:outputLabel for="cstE" value="Customer Email"/>
-                                <p:inputText id="cstE" value="#{s.sales.custEmail}" placeholder="Customer Email" immediate="false" rendered="true" class="form-control"/>
-                                <p:outputLabel for="cstP" value="Customer Password"/>
-                                <p:password id="cstP" value="#{s.sales.custPassword}" placeholder="Customer Password" immediate="false" rendered="true" class="form-control"/>
-                                <p:outputLabel for="fltno" value="Flat No"/>
-                                <p:inputText id="fltno" value="#{s.flat.flatId}" placeholder="Flat No" immediate="false" rendered="true" class="form-control"/>
-                                <p:outputLabel for="fltprc" value="Flat Price"/>
-                                <p:inputText id="fltprc" value="#{s.sales.flatPrice}" placeholder="Flat Price" immediate="false" rendered="true" class="form-control"/>
-                                <p:outputLabel for="bnkName" value="Bank Name"/>
-                                <p:inputText id="bnkName" value="#{s.sales.bankName}" placeholder="Bank Name" immediate="false" rendered="true" class="form-control"/>
-                                <p:outputLabel for="transId" value="Transaction Id"/>
-                                <p:inputText id="transId" value="#{s.sales.transactionId}" placeholder="Transaction Id" immediate="false" rendered="true" class="form-control"/>
-                                <p:outputLabel for="padAmnt" value="Paid Amount"/>
-                                <p:inputText id="padAmnt" value="#{s.sales.paidAmount}" placeholder="Paid Amount" immediate="false" rendered="true" class="form-control"/>
+                                <div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
+                                    <ul class="nav navbar-nav">
+                                        <li style="width: 200px; background-color: wheat; border-bottom: 1px solid white"><a href="add_flat.xhtml">Home</a></li>
+                                        <li style="width: 200px; background-color: wheat; border-bottom: 1px solid white"><a href="addSales.xhtml">Add new Sale</a></li>
+                                        <li style="width: 200px; background-color: wheat; border-bottom: 1px solid white"><a href="updateSales.xhtml">Update Sale</a></li>
+                                        <li style="width: 200px;background-color: wheat; border-bottom: 1px solid white"><a href="deleteSales.xhtml">Delete Sale</a></li>
+                                    </ul>
+                                </div>
+                </div>
+                <div class="col-lg-9">
+                    <h:form>
+                        <h4>****** Add Sales Data ******</h4>
+                        <p:growl id="growl" life="2000"/>           
+                        <p:outputLabel for="csti" value="Sales Id" style="margin-top: 20px"/>
+                        <p:inputText id="csti" value="#{s.sales.salesId}" placeholder="Customer Name" immediate="false" rendered="true" class="form-control"/>
+                        <p:outputLabel for="cstN" value="Customer Name" style="margin-top: 20px"/>
+                        <p:inputText id="cstN" value="#{s.sales.custName}" placeholder="Customer Name" immediate="false" rendered="true" class="form-control"/>
+                        <p:outputLabel for="cstE" value="Customer Email" style="margin-top: 20px"/>
+                        <p:inputText id="cstE" value="#{s.sales.custEmail}" placeholder="Customer Email" immediate="false" rendered="true" class="form-control"/>
+                        <p:outputLabel for="cstP" value="Customer Password" style="margin-top: 20px"/>
+                        <p:password id="cstP" value="#{s.sales.custPassword}" placeholder="Customer Password" immediate="false" rendered="true" class="form-control"/>
+                        <p:outputLabel for="fltno" value="Flat No" style="margin-top: 20px"/>
+                        <p:inputText id="fltno" value="#{s.flat.flatId}" placeholder="Flat No" immediate="false" rendered="true" class="form-control"/>
+                        <p:outputLabel for="fltprc" value="Flat Price" style="margin-top: 20px"/>
+                        <p:inputText id="fltprc" value="#{s.sales.flatPrice}" placeholder="Flat Price" immediate="false" rendered="true" class="form-control"/>
+                        <p:outputLabel for="bnkName" value="Bank Name" style="margin-top: 20px"/>
+                        <p:inputText id="bnkName" value="#{s.sales.bankName}" placeholder="Bank Name" immediate="false" rendered="true" class="form-control"/>
+                        <p:outputLabel for="transId" value="Transaction Id" style="margin-top: 20px"/>
+                        <p:inputText id="transId" value="#{s.sales.transactionId}" placeholder="Transaction Id" immediate="false" rendered="true" class="form-control"/>
+                        <p:outputLabel for="padAmnt" value="Paid Amount" style="margin-top: 20px"/>
+                        <p:inputText id="padAmnt" value="#{s.sales.paidAmount}" placeholder="Paid Amount" immediate="false" rendered="true" class="form-control" />
+                        
+                        <p:outputLabel for="insert1" />
+                        <p:commandButton id="insert1" value="Save" action="#{s.doInsert()}" ajax="false" styleClass="btn btn-primary" update="growl" style="box-shadow: none; margin-top: 20px; width: 120px; margin-bottom: 100px;" />
 
-                                <p:outputLabel for="insert1" />
-                                <p:commandButton id="insert1" value="Save" action="#{s.doInsert()}" ajax="false" styleClass="btn btn-primary" update="growl" />
-                            </p:panelGrid>
-                        </h:form>
-
-                    </center>
-                    <hr/>
-                    <br/>
-                    <br/>
-                    <br/>
-                </ui:insert>
+                    </h:form>
+                </div>
             </div>
         </div>
+
     </h:body>
 
 </html>

@@ -43,6 +43,8 @@ public class FlatBooking {
     private String bathrooms;
     private UploadedFile file;
     private String f;
+    private String loc="Dhaka";
+    
     ApplicationContext ctx = new ClassPathXmlApplicationContext("com/exam/springBean/flatbooking.xml");
     Flat2 flat = ctx.getBean("flatbooking", Flat2.class);
     private List<Flat2> showFlatList = new ArrayList<Flat2>();
@@ -58,7 +60,7 @@ public class FlatBooking {
     }
 
     public FlatBooking() {
-        showFlat();
+        showFlat(); 
     }
 
     public void upload() throws FileNotFoundException, IOException {
@@ -143,6 +145,9 @@ public class FlatBooking {
             showFlatList.add(new Flat2(p.getFlatId(), p.getTitle(), p.getLocation(), p.getDetails(), p.getImage()));
         }
     }
+    
+    
+    
 
     public String FlatDetailsShow(int id) {
         showFlatListDetails.clear();
@@ -156,6 +161,7 @@ public class FlatBooking {
             for (Flat2 p : flatSum) {
                 showFlatListDetails.add(new Flat2(p.getTitle(), p.getLocation(), p.getDetails(), p.getCity(), p.getCollection(), p.getSize(), p.getBedrooms(), p.getBathrooms(), p.getImage()));
                 setF(p.getImage());
+                setLoc(p.getLocation());
             }
             r = "show.xhtml";
         } else {
@@ -267,6 +273,14 @@ public class FlatBooking {
 
     public void setShowFlatListDetails(List<Flat2> showFlatListDetails) {
         this.showFlatListDetails = showFlatListDetails;
+    }
+
+    public String getLoc() {
+        return loc;
+    }
+
+    public void setLoc(String loc) {
+        this.loc = loc;
     }
 
     

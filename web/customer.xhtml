@@ -9,18 +9,22 @@
         <h:outputStylesheet name="./css/bootstrap.min.css"/>
     </h:head>
     <h:body>
-        <div class="container   ">
+        <div class="container">
             <div class="row">
                 <div class="col-xs-12">
+
+                    <div>
+                        <p:graphicImage  library="images" name="about.jpg" height="300" width="100%"/>
+                    </div>
+                    <h:form>
+                        <p:commandButton action="main.xhtml" value="Logout"  ajax="false" class="btn btn-default" style="box-shadow: none; margin: 5px; color: #000"/>
+                    </h:form>
 
                 </div>
 
             </div>
             <div class="row">
-                <br/>
-                <br/>
-                <br/>
-                <br/>
+
                 <br/>
                 <div class="col-xs-6">
                     <h1>Customer Details Information.</h1>
@@ -46,9 +50,9 @@
                         </c:forEach>
                     </table>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-6" style="text-align: left;">
                     <form action="salesReportShow.jsp">                        
-                        <input type="submit" value="Show Report" class="btn btn-info pull-right"/>
+                        <input type="submit" value="Show Report" class="btn btn-success"/>
                     </form>
                 </div>
 
