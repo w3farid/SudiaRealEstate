@@ -22,35 +22,37 @@
                 <p:graphicImage name="./images/logo.png" style="width: 60px; height: 60px; margin-left: 100px;"/>
             </div>
             <div id="navigationbar" class="menu">
-                <p:megaMenu  style="margin-top:20px">
-                     <p:menuitem value="About Us" url="about2.xhtml"/>
-                    <p:submenu label="Login">
-                        <p:column>
-                            <p:submenu label="Login System">
-                                <p:menuitem value="Admin Login" url="login.xhtml"/>
-                                <p:menuitem value="Customer Login" url="cust_login.xhtml"/>        
-                            </p:submenu>                           
-                        </p:column>
+                <h:form>
+                    <p:megaMenu  style="margin-top:20px">
+                        <p:menuitem value="About Us" url="about2.xhtml"/>
+                        <p:submenu label="Login">
+                            <p:column>
+                                <p:submenu label="Login System">
+                                    <p:menuitem value="Admin Login" action="login.xhtml"/>
+                                    <p:menuitem value="Customer Login" action="cust_login.xhtml"/>        
+                                </p:submenu>                           
+                            </p:column>
 
 
-                    </p:submenu>
+                        </p:submenu>
 
-                </p:megaMenu>
+                    </p:megaMenu>
+                </h:form>
             </div>
-            <div class='content'>
-                <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"></link>
-                <link href="../resources/css/textAnimationstyle.css" rel="stylesheet"></link>
-                <div class='visible'>
-                    <p>
-                        Services:
-                    </p>
-                    <ul>
-                        <li>Security</li>
-                        <li>Parking</li>
-                        <li>Be side Main Road</li>
-                    </ul>
-                </div>
-            </div>
+            <!--            <div class='content'>
+                            <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"></link>
+                            <link href="../resources/css/textAnimationstyle.css" rel="stylesheet"></link>
+                            <div class='visible'>
+                                <p>
+                                    Services:
+                                </p>
+                                <ul>
+                                    <li>Security</li>
+                                    <li>Parking</li>
+                                    <li>Be side Main Road</li>
+                                </ul>
+                            </div>
+                        </div>-->
             <div id="comname" class="companyname">
                 <center>
                     <h1>Sudia Real Estate company.</h1>
@@ -89,7 +91,7 @@
                     <p>Find out about doing business with Lamudi and what products and services we can offer.</p>
                 </div>
                 <div class="clickf2">
-                    <a href="contact-us" class="button tiny wow pulse" data-wow-iteration="3">Get in Touch With Us</a>
+                    <a href="about2.xhtml" class="button tiny wow pulse" data-wow-iteration="3">Get in Touch With Us</a>
                 </div>
             </div>
             <div class="featured-menu-panel">
@@ -101,14 +103,14 @@
                                 <tr>
                                     <td rowspan="3"><img src="resources/images/flatImages/${v.image}" style="width: 120px" height="120px"/></td>
                                     <td  colspan="2" style="padding-left: 15px;"><h3 style="color: #269abc">${v.title}</h3></td>                               
-                                                                   
+
                                 </tr>
                                 <tr>
                                     <td colspan="2" style="padding-left: 15px;">${v.details}</td>                                    
                                 </tr>
                                 <tr>
                                     <td style="padding-left: 300px;">
-                                        <p><p:commandButton value="More" action="#{flat.FlatDetailsShow(v.flatId)}"  class="btn btn-sm btn-primary" icon="fa fa-shopping-cart" ajax="false" /></p>
+                                        <p><p:commandButton process="@this" value="More" action="#{flat.FlatDetailsShow(v.flatId)}"  class="btn btn-sm btn-primary" icon="fa fa-shopping-cart" ajax="false" /></p>
                                     </td>
                                 </tr>
                             </table>
@@ -140,7 +142,7 @@
                     <p>At bti, we take tremendous pride in our professionalism and ensure that we remain the best real esatate company in Bangladesh, with a common underlying emphasis on functional layouts and at the same time following all standard operating procedures to ensure construction of the highest quality. Our well-planned projects constitute some of the most attractive buildings in Dhaka and Chittagong. Located in different areas of Dhaka, Chittagong and Comilla, our wide range of projects enable you to choose a property that suits your taste and lifestyle.</p>
 
                     <p>Apart from our strength in construction and design, bti also understands the importance of customer care and implements it at an unparalleled level in the real estate sector. bti has a fully committed and well trained customer service team that provides you with service long after the handover of your property. We also maintain a great relationship with our landowners by following a win-win approach for our joint venture projects. We consider our honorable landowners to be our most respected customers as well as our business partners. This is what ensures our position as the best real estate developer in Bangladesh.
-                        - See more at: http://www.btibd.com/#sthash.2Hb08xrL.dpuf</p>
+                    </p>
                 </div>
             </div>
         </div>
