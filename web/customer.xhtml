@@ -51,9 +51,15 @@
                     </table>
                 </div>
                 <div class="col-lg-6" style="text-align: left;">
-                    <form action="salesReportShow.jsp">                        
+                    <h:form>
+                        <h:commandButton actionListener="#{s.showCust()}" value="Show" class="btn btn-danger"/>
+                    </h:form>   
+                    <br/>
+                    <form action="salesReportShow.jsp"> 
+                        <input type="hidden" value="${s.email}"  name="eamil"/>
                         <input type="submit" value="Show Report" class="btn btn-success"/>
                     </form>
+
                 </div>
 
             </div>

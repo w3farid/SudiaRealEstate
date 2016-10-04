@@ -13,7 +13,8 @@
 			<style mode="Opaque" backcolor="#F0EFEF"/>
 		</conditionalStyle>
 	</style>
-	<queryString language="SQL">
+	<parameter name="eamil" class="java.lang.String"/>
+	<queryString>
 		<![CDATA[SELECT
      sales.`sales_id` AS sales_sales_id,
      sales.`custName` AS sales_custName,
@@ -25,7 +26,7 @@
      sales.`transaction_id` AS sales_transaction_id,
      sales.`paid_amount` AS sales_paid_amount
 FROM
-     `sales` sales]]>
+     `sales` sales where sales.`custEmail`=$P{eamil}]]>
 	</queryString>
 	<field name="sales_sales_id" class="java.lang.Integer"/>
 	<field name="sales_custName" class="java.lang.String"/>

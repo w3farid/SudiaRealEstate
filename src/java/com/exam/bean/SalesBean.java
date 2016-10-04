@@ -45,9 +45,9 @@ public class SalesBean {
     private List<Integer> allFlatNo = new ArrayList<Integer>();
     private List<Sales> showFlatDetailsCust = new ArrayList<Sales>();
     
+    private String email;
 
-    public SalesBean() {
-        showCust();
+    public SalesBean() {        
         allSales();
         
     }
@@ -60,6 +60,7 @@ public class SalesBean {
         Query q = s.createQuery("from Sales where custEmail=:e and custPassword=:p");
         q.setParameter("e", sales.getCustEmail());
         q.setParameter("p", sales.getCustPassword());
+        setEmail(sales.getCustEmail());
         List<Sales> log = q.list();
         String r = "";
         if (log.size() > 0) {
@@ -76,7 +77,7 @@ public class SalesBean {
         Session s = HibernateUtil.getSessionFactory().openSession();
         s.beginTransaction();
         Query q = s.createQuery("from Sales where custEmail=:email");
-        q.setParameter("email", "a@gmail.com");
+        q.setParameter("email", getEmail());
         List<Sales> flatSum = q.list();
         if (flatSum.size() > 0) {
             for (Sales p : flatSum) {
@@ -207,6 +208,14 @@ public class SalesBean {
 
     public void setShowFlatDetailsCust(List<Sales> showFlatDetailsCust) {
         this.showFlatDetailsCust = showFlatDetailsCust;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
    

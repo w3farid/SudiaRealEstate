@@ -35,7 +35,7 @@
                 InputStream inputStream = new FileInputStream(new File(s));
                 JasperReport jr = JasperCompileManager.compileReport(inputStream);
                 Map param = new HashMap();
-               
+                param.put("eamil", request.getParameter("eamil"));
                 JasperPrint jp = JasperFillManager.fillReport(jr, param, conn);
                 response.setContentType("application/pdf");
                 JasperExportManager.exportReportToPdfStream(jp, response.getOutputStream());
